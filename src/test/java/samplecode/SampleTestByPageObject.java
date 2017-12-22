@@ -9,7 +9,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 
 /**
- * ŒvZƒy[ƒW‚ÌƒeƒXƒg
+ * PageObjectã‚’ä½¿ã£ãŸè¨ˆç®—ãƒšãƒ¼ã‚¸ã®ãƒ†ã‚¹ãƒˆ
  */
 public class SampleTestByPageObject {
 
@@ -18,12 +18,12 @@ public class SampleTestByPageObject {
 		Configuration.browser = WebDriverRunner.CHROME;
 		Configuration.baseUrl = "http://localhost:8080";
 		CalcPage calcPage = open("/maeyes_UIS/calc.html", CalcPage.class);
-		// ”’l“ü—Í
+		// æ•°å€¤å…¥åŠ›
 		calcPage.value1Text().val("1");
 		calcPage.value2Text().val("2");
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		calcPage.add();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		calcPage.result().should(value("3"));
 	}
 	

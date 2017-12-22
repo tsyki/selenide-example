@@ -13,7 +13,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 
 /**
- * Šeí•”•iƒy[ƒW‚ÌƒeƒXƒg
+ * å„ç¨®éƒ¨å“ãƒšãƒ¼ã‚¸ã®ãƒ†ã‚¹ãƒˆ
  */
 public class WidgetTest {
 
@@ -21,14 +21,14 @@ public class WidgetTest {
 	public void comboTest() {
 		Configuration.browser = WebDriverRunner.CHROME;
 		open("http://localhost:8080/widgets.html");
-		// ƒRƒ“ƒ{‘I‘ğ
+		// ã‚³ãƒ³ãƒœé¸æŠ
 		SelenideElement val1Combo = $(byId("value1Combo"));
-		val1Combo.selectOptionByValue("2"); // ’l‚Å‘I‘ğ
+		val1Combo.selectOptionByValue("2"); // å€¤ã§é¸æŠ
 		SelenideElement val2Combo = $(byId("value2Combo"));
-		val2Combo.selectOption("’l2"); // ƒ‰ƒxƒ‹‚Å‘I‘ğ
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		val2Combo.selectOption("å€¤2"); // ãƒ©ãƒ™ãƒ«ã§é¸æŠ
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addComboButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).should(value("4"));
 	}
 	
@@ -36,7 +36,7 @@ public class WidgetTest {
 	public void radioTest() {
 		Configuration.browser = WebDriverRunner.CHROME;
 		open("http://localhost:8080/widgets.html");
-		// ƒ‰ƒWƒI‘I‘ğ
+		// ãƒ©ã‚¸ã‚ªé¸æŠ
 		$(byName("value1")).selectRadio("2");
 		// selectRadio(byName("value1"), "2"); // deprecated
 		getSelectedRadio(byName("value1")).should(value("2"));
@@ -44,9 +44,9 @@ public class WidgetTest {
 		$(byName("value2")).selectRadio("1");
 		// selectRadio(byName("value2"), "1"); // deprecated
 		getSelectedRadio(byName("value2")).should(value("1"));
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addRadioButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).should(value("3"));
 	}
 }

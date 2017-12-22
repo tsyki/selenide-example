@@ -14,7 +14,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 
 /**
- * —v‘fæ“¾‚ÌŒŸØ
+ * è¦ç´ å–å¾—ã®æ¤œè¨¼
  */
 public class SelectorTest {
 
@@ -26,9 +26,9 @@ public class SelectorTest {
 		val1TextByXpath.val("1");
 		SelenideElement val2TextById = $(byId("value2"));
 		val2TextById.val("2");
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).should(value("3"));
 	}
 	
@@ -40,9 +40,9 @@ public class SelectorTest {
 		val1Text.val("1");
 		SelenideElement val2Text = $("#value2");
 		val2Text.val("2");
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).should(value("3"));
 	}
 }

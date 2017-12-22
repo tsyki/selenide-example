@@ -13,7 +13,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 
 /**
- * ŒvZƒy[ƒW‚ÌƒeƒXƒg
+ * è¨ˆç®—ãƒšãƒ¼ã‚¸ã®ãƒ†ã‚¹ãƒˆ
  */
 public class SampleTest {
 
@@ -21,14 +21,14 @@ public class SampleTest {
 	public void addTest() {
 		Configuration.browser = WebDriverRunner.CHROME;
 		open("http://localhost:8080/calc.html");
-		// ”’l“ü—Í
+		// æ•°å€¤å…¥åŠ›
 		SelenideElement val1Text = $(By.xpath("//input[@id='value1']"));
 		val1Text.val("1");
 		SelenideElement val2Text = $(By.xpath("//input[@id='value2']"));
 		val2Text.val("2");
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).should(value("3"));
 		// $(byId("result")).should(text("3"));
 	}
@@ -37,14 +37,14 @@ public class SampleTest {
 	public void addAsyncFastTest() {
 		Configuration.browser = WebDriverRunner.CHROME;
 		open("/calc.html");
-		// ”’l“ü—Í
+		// æ•°å€¤å…¥åŠ›
 		SelenideElement val1Text = $(By.xpath("//input[@id='value1']"));
 		val1Text.val("1");
 		SelenideElement val2Text = $(By.xpath("//input[@id='value2']"));
 		val2Text.val("2");
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addAsyncFastButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).should(value("3"));
 		// $(byId("result")).should(text("3"));
 	}
@@ -53,14 +53,14 @@ public class SampleTest {
 	public void addAsyncSlowTest() {
 		Configuration.browser = WebDriverRunner.CHROME;
 		open("/calc.html");
-		// ”’l“ü—Í
+		// æ•°å€¤å…¥åŠ›
 		SelenideElement val1Text = $(By.xpath("//input[@id='value1']"));
 		val1Text.val("1");
 		SelenideElement val2Text = $(By.xpath("//input[@id='value2']"));
 		val2Text.val("2");
-		// ‰ÁZƒ{ƒ^ƒ“‰Ÿ‰º
+		// åŠ ç®—ãƒœã‚¿ãƒ³æŠ¼ä¸‹
 		$(byId("addAsyncSlowButton")).click();
-		// ƒAƒT[ƒg
+		// ã‚¢ã‚µãƒ¼ãƒˆ
 		$(byId("result")).waitUntil(value("3"),6000);
 		// $(byId("result")).should(value("3"));
 		// $(byId("result")).should(text("3"));
