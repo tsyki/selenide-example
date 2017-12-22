@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+ <!--
+  function add(){
+    var val1 = document.getElementById('value1').value;
+    var val2 = document.getElementById('value2').value;
+    var added = parseInt(val1) + parseInt(val2);
+    document.getElementById('result').value = added;
+  }
+
+  function addAsync(waitTime){
+    window.setTimeout( function(){
+      var val1 = document.getElementById('value1').value;
+      var val2 = document.getElementById('value2').value;
+      var added = parseInt(val1) + parseInt(val2);
+      document.getElementById('result').value = added;
+    }, waitTime );
+    
+  }
+
+  function addCombo(){
+    var val1 = document.getElementById('value1Combo').value;
+    var val2 = document.getElementById('value2Combo').value;
+    var added = parseInt(val1) + parseInt(val2);
+    document.getElementById('result').value = added;
+  }
+
+  function addRadio(){
+    var value1Radios = document.getElementsByName( "value1" ) ;
+    var val1;
+    // 選択状態の値を取得
+    for ( i = 0; i < value1Radios.length; i++) {
+	    if ( value1Radios[i].checked ) {
+		    val1 = value1Radios[i].value;
+		    break;
+	    }
+    }
+
+    var value2Radios = document.getElementsByName( "value2" ) ;
+    var val2;
+    // 選択状態の値を取得
+    for ( i = 0; i < value2Radios.length; i++) {
+	    if ( value2Radios[i].checked ) {
+		    val2 = value2Radios[i].value;
+		    break;
+	    }
+    }
+    var added = parseInt(val1) + parseInt(val2);
+    document.getElementById('result').value = added;
+  }
+ -->
+</script>
+</head>
+<body>
+<form name="calcForm">
+<div id="inputTextArea">
+  <label id="val1TextLabel" class="ui-label">値1</label>
+  <input type="text" id="value1Text" class="ui-input"/>
+  <label id="val2TextLabel" class="ui-label">値2</label>
+  <input type="text" id="value2Text" class="ui-input"/>
+</div>
+<div id="inputComboArea">
+  <label id="val1ComboLabel" class="ui-label">値1</label>
+  <select id="value1Combo" class="ui-input">
+    <option value="1">値1</option>
+    <option value="2">値2</option>
+  </select>
+  <label id="val2ComboLabel" class="ui-label">値2</label>
+  <select id="value2Combo" class="ui-input">
+    <option value="1">値1</option>
+    <option value="2">値2</option>
+  </select>
+</div>
+<div id="inputRadioArea">
+  <label id="val1RadioLabel" class="ui-label">値1</label>
+  <input type="radio" name="value1" value="1" class="ui-input" checked/>値1
+  <input type="radio" name="value1" value="2" class="ui-input" />値2
+  <br/>
+  <label id="val2RadioLabel" class="ui-label">値2</label>
+  <input type="radio" name="value2" value="1" class="ui-input" />値1
+  <input type="radio" name="value2" value="2" class="ui-input" checked/>値2
+</div>
+
+<div id="buttonArea">
+  <input type="button" value="加算" id="addButton" onClick="add()">
+  <input type="button" value="加算(非同期-1秒)" id="addAsyncFastButton" onClick="addAsync(1000)">
+  <input type="button" value="加算(非同期-5秒)" id="addAsyncSlowButton" onClick="addAsync(5000)">
+  <input type="button" value="加算(コンボ)" id="addComboButton" onClick="addCombo()">
+  <input type="button" value="加算(ラジオ)" id="addRadioButton" onClick="addRadio()">
+</div>
+<div id="resultArea">
+  <label id="resultLabel" class="ui-label">計算結果</label>
+  <input type="text" id="result"readOnly="true">
+</div>
+</form>
+</body>
+</html>

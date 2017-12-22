@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+ <!--
+  function add(){
+    var val1 = document.getElementById('value1').value;
+    var val2 = document.getElementById('value2').value;
+    var added = parseInt(val1) + parseInt(val2);
+    document.getElementById('result').value = added;
+  }
+
+  function addAsync(waitTime){
+    window.setTimeout( function(){
+      var val1 = document.getElementById('value1').value;
+      var val2 = document.getElementById('value2').value;
+      var added = parseInt(val1) + parseInt(val2);
+      document.getElementById('result').value = added;
+    }, waitTime );
+    
+  }
+ -->
+</script>
+</head>
+<body>
+	<form name="calcForm">
+		<div id="inputArea" class="input-area">
+			<label id="val1Label" class="ui-label">値1</label>
+			<input type="text" id="value1" class="ui-input" />
+			<label id="val2Label" class="ui-label">値2</label>
+			<input type="text" id="value2" class="ui-input" />
+		</div>
+		<div id="buttonArea">
+			<input type="button" value="加算" id="addButton" onClick="add()">
+		</div>
+		<div id="resultArea">
+			<label id="resultLabel" class="ui-label">計算結果</label>
+			<input type="text" id="result" readonly="readonly">
+		</div>
+	</form>
+</body>
+</html>
