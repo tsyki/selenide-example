@@ -15,7 +15,7 @@ import com.codeborne.selenide.WebDriverRunner;
 /**
  * 計算ページのテスト
  */
-public class SampleTest {
+public class CalcTest {
 
     @Test
 	public void addTest() {

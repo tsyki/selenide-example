@@ -11,7 +11,7 @@ import com.codeborne.selenide.WebDriverRunner;
 /**
  * PageObjectを使った計算ページのテスト
  */
-public class SampleTestByPageObject {
+public class CalcTestByPageObject {
 
 	@Test
 	public void ayncTestNotDuplicate() {
