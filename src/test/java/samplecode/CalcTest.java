@@ -56,4 +56,18 @@ public class CalcTest {
 		// アサート
 		$(byId("result")).waitUntil(value("3"),6000);
 	}
+	
+	@Test(expected=AssertionError.class)
+	public void addAsyncSlowTestFail() {
+		open("/calc.html");
+		// 数値入力
+		SelenideElement val1Text = $(By.xpath("//input[@id='value1']"));
+		val1Text.val("1");
+		SelenideElement val2Text = $(By.xpath("//input[@id='value2']"));
+		val2Text.val("2");
+		// 加算ボタン押下
+		$(byId("addAsyncSlowButton")).click();
+		// アサート。デフォルトのタイムアウト待ち時間4秒ではエラーとなる
+		$(byId("result")).should(value("3"));
+	}
 }
