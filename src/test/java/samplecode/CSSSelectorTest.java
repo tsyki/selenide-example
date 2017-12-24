@@ -15,7 +15,7 @@ public class CSSSelectorTest {
 
 	@Test
 	public void selectorTest() {
-		open("/struct.html");
+		open("/structSelector.html");
 		
 		// IDがemployeeCode1である要素を取得
 		SelenideElement cssSelectorElem =  $("#employeeCode1");

@@ -8,9 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 import org.junit.Test;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 
 /**
  * 各種部品ページのテスト
@@ -19,8 +17,7 @@ public class WidgetTest {
 
 	@Test
 	public void comboTest() {
-		Configuration.browser = WebDriverRunner.CHROME;
-		open("http://localhost:8080/widgets.html");
+		open("/widgets.html");
 		// コンボ選択
 		SelenideElement val1Combo = $(byId("value1Combo"));
 		val1Combo.selectOptionByValue("2"); // 値で選択
@@ -34,8 +31,7 @@ public class WidgetTest {
 	
 	@Test
 	public void radioTest() {
-		Configuration.browser = WebDriverRunner.CHROME;
-		open("http://localhost:8080/widgets.html");
+		open("/widgets.html");
 		// ラジオ選択
 		$(byName("value1")).selectRadio("2");
 		// selectRadio(byName("value1"), "2"); // deprecated

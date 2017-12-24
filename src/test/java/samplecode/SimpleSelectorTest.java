@@ -18,7 +18,7 @@ public class SimpleSelectorTest {
 
 	@Test
 	public void selectorTest() {
-		open("/input.html");
+		open("/simpleSelector.html");
 		
 		SelenideElement byIdElem =  $(byId("value1"));
 		byIdElem.val("1").should(value("1"));

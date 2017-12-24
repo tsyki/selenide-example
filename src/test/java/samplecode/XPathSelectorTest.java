@@ -16,7 +16,7 @@ public class XPathSelectorTest {
 
 	@Test
 	public void selectorTest() {
-		open("/struct.html");
+		open("/structSelector.html");
 		// IDがemployeeCode1である要素を取得(タグ名は任意)
 		SelenideElement cssSelectorElem =  $(byXpath("//*[@id=\"employeeCode1\"]"));
 		cssSelectorElem.val("1").should(value("1"));
