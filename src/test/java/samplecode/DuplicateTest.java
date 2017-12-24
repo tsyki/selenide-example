@@ -6,6 +6,8 @@ import static com.codeborne.selenide.Selectors.byCssSelector;
 
 import org.junit.Test;
 
+import com.codeborne.selenide.SelenideElement;
+
 /**
  * ヒットする要素が複数ある場合のサンプルコード
  */
@@ -30,6 +32,11 @@ public class DuplicateTest {
 	public void multiSelectTest() {
 		open("/duplicate.html");
 		// テキストボックス入力
+		// スタイルが「.ui-input-text」である要素全てに「2」を設定(for-each版)
+		for(SelenideElement elem:$$(".ui-input-text")) {
+			elem.val("2");
+		}
+		// スタイルが「.ui-input-text」である要素全てに「2」を設定(ラムダ式利用版)
 		$$(".ui-input-text").forEach(elem -> elem.val("2"));
 		$$(".ui-input-text").forEach(elem -> elem.should(value("2")));
 		// コンボボックス入力
