@@ -35,11 +35,9 @@ public class WidgetTest {
 		open("/widgets.html");
 		// ラジオ選択
 		$(byName("value1")).selectRadio("2");
-		// selectRadio(byName("value1"), "2"); // deprecated
 		getSelectedRadio(byName("value1")).should(value("2"));
 
 		$(byName("value2")).selectRadio("1");
-		// selectRadio(byName("value2"), "1"); // deprecated
 		getSelectedRadio(byName("value2")).should(value("1"));
 		// 加算ボタン押下
 		$(byId("addRadioButton")).click();
