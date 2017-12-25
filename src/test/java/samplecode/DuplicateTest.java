@@ -1,8 +1,11 @@
 package samplecode;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selectors.byCssSelector;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.getSelectedRadio;
+import static com.codeborne.selenide.Selenide.open;
 
 import org.junit.Test;
 
@@ -27,13 +30,13 @@ public class DuplicateTest {
 		$(".ui-input-radio:checked").should(value("2"));
 		getSelectedRadio(byCssSelector(".ui-input-radio")).should(value("2"));
 	}
-	
+
 	@Test
 	public void multiSelectTest() {
 		open("/duplicate.html");
 		// テキストボックス入力
 		// スタイルが「.ui-input-text」である要素全てに「2」を設定(for-each版)
-		for(SelenideElement elem:$$(".ui-input-text")) {
+		for (SelenideElement elem : $$(".ui-input-text")) {
 			elem.val("2");
 		}
 		// スタイルが「.ui-input-text」である要素全てに「2」を設定(ラムダ式利用版)

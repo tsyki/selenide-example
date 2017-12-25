@@ -1,9 +1,9 @@
 package samplecode;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.value;
+import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.open;
 
 import org.junit.Test;
@@ -27,7 +27,7 @@ public class SelectorTest {
 		// アサート
 		$(byId("result")).should(value("3"));
 	}
-	
+
 	@Test
 	public void getByIdTest2() {
 		open("/calc.html");

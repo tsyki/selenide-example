@@ -1,11 +1,10 @@
 package samplecode;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.open;
 
 import org.junit.Test;
-
-
+ 
 /**
  * PageObjectを使った計算ページのテスト
  */
@@ -22,6 +21,5 @@ public class CalcTestByPageObject {
 		// アサート
 		calcPage.result().should(value("3"));
 	}
-	
 
 }

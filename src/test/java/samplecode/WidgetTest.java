@@ -1,9 +1,10 @@
 package samplecode;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.getSelectedRadio;
 import static com.codeborne.selenide.Selenide.open;
 
 import org.junit.Test;
@@ -28,7 +29,7 @@ public class WidgetTest {
 		// アサート
 		$(byId("result")).should(value("4"));
 	}
-	
+
 	@Test
 	public void radioTest() {
 		open("/widgets.html");
@@ -36,7 +37,7 @@ public class WidgetTest {
 		$(byName("value1")).selectRadio("2");
 		// selectRadio(byName("value1"), "2"); // deprecated
 		getSelectedRadio(byName("value1")).should(value("2"));
-		
+
 		$(byName("value2")).selectRadio("1");
 		// selectRadio(byName("value2"), "1"); // deprecated
 		getSelectedRadio(byName("value2")).should(value("1"));

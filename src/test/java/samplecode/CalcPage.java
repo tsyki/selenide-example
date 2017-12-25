@@ -10,19 +10,19 @@ public class CalcPage {
 	private SelenideElement value2Text = $(byId("value2"));
 	private SelenideElement addButton = $(byId("addButton"));
 	private SelenideElement result = $(byId("result"));
-	
+
 	public SelenideElement value1Text() {
 		return value1Text;
-	}
-	
+	} 
+
 	public SelenideElement value2Text() {
 		return value2Text;
 	}
-	
+
 	public void add() {
 		addButton.click();
 	}
-	
+
 	public SelenideElement result() {
 		return result;
 	}
