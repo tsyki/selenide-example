@@ -1,5 +1,6 @@
 package samplecode;
 
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.id;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
@@ -39,7 +40,11 @@ public class SimpleSelectorTest {
 
 		// valueの値指定で取得
 		SelenideElement byValueElem = $(byValue("2"));
+		// 部分一致
+		byValueElem.should(text("値"));
 		byValueElem.should(text("値2"));
+		// 完全一致
+		byValueElem.should(exactText("値2"));
 
 		// テキスト完全一致で取得
 		SelenideElement byTextElem = $(byText("値1"));
